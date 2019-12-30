@@ -19,31 +19,37 @@
 const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
 
+const APL_INTRO_TOKEN = "APL_INTRO_TOKEN";
+
 // core functionality for fact skill
-const GetNewFactHandler = {
+const GetAPLFactHandler = {
   canHandle(handlerInput) {
     const request = handlerInput.requestEnvelope.request;
     // checks request type
     return request.type === 'LaunchRequest'
       || (request.type === 'IntentRequest'
-        && request.intent.name === 'GetNewFactIntent');
+        && request.intent.name === 'GetAPLFactIntent');
   },
   handle(handlerInput) {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-    // gets a random fact by assigning an array to the variable
-    // the random item from the array will be selected by the i18next library
-    // the i18next library is set up in the Request Interceptor
-    const randomFact = requestAttributes.t('FACTS');
-    // concatenates a standard message with the random fact
-    const speakOutput = requestAttributes.t('GET_FACT_MESSAGE') + randomFact;
+    const aplIntroDocument = require('APL/intro.json');
+    const aplIntroData = require('APL/intro_data.json');
+    let responseBuilder = handlerInput.responseBuilder;
+    // Check for APL support on the user's device
+    if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
+        // Code to send APL directives can go here
+        responseBuilder.addDirective({
+          type: 'Alexa.Presentation.APL.RenderDocument',
+          token: APL_INTRO_TOKEN,
+          document: aplIntroDocument,
+          datasources: aplIntroData
+        });
+    }
+    else {
+      responseBuilder.speak("This device does not support APL")
 
-    return handlerInput.responseBuilder
-      .speak(speakOutput)
-      // Uncomment the next line if you want to keep the session open so you can
-      // ask for another fact without first re-opening the skill
-      // .reprompt(requestAttributes.t('HELP_REPROMPT'))
-      .withSimpleCard(requestAttributes.t('SKILL_NAME'), randomFact)
-      .getResponse();
+    }
+    return responseBuilder.getResponse();
   },
 };
 
@@ -154,7 +160,7 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    GetNewFactHandler,
+    GetAPLFactHandler,
     HelpHandler,
     ExitHandler,
     FallbackHandler,

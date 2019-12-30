@@ -1,0 +1,33 @@
+{
+    "bodyTemplate1Data": {
+        "type": "object",
+        "objectId": "bt1Sample",
+        "backgroundImage": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/BT1_Background.png",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/BT1_Background.png",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "title": "Did You Know?",
+        "textContent": {
+            "primaryText": {
+                "type": "PlainText",
+                "text": "Alexa has a visual design framework called Alexa Presentation Language (APL), which allows you to build interactive voice and visual experiences across the device landscape. This multimodal experience can make skills more delightful and engaging to the customer. "
+            }
+        },
+        "logoUrl": "https://m.media-amazon.com/images/G/01/AlexaDevPortal/alexa.CB473388935._CB1539290662_.png"
+    }
+}

@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "space facts",
+      "invocationName": "apl facts",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -20,22 +20,12 @@
           "samples": []
         },
         {
-          "name": "GetNewFactIntent",
+          "name": "GetAPLFactIntent",
           "samples": [
-            "a fact",
-            "a space fact",
-            "tell me a fact",
-            "tell me a space fact",
-            "give me a fact",
-            "give me a space fact",
-            "tell me trivia",
-            "tell me a space trivia",
-            "give me trivia",
-            "give me a space trivia",
-            "give me some information",
-            "give me some space information",
-            "tell me something",
-            "give me something"
+            "What is APL",
+            "What is Alexa Presentation Language",
+            "Alexa Presentation Language",
+            "How can I render screen on Alexa"
           ],
           "slots": []
         },
