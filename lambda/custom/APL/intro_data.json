@@ -22,12 +22,16 @@
             ]
         },
         "title": "Did You Know?",
-        "textContent": {
-            "primaryText": {
-                "type": "PlainText",
-                "text": "Alexa has a visual design framework called Alexa Presentation Language (APL), which allows you to build interactive voice and visual experiences across the device landscape. This multimodal experience can make skills more delightful and engaging to the customer. "
-            }
+        "properties": {
+            "text": "Alexa has a visual design framework called Alexa Presentation Language (APL), which allows you to build interactive voice and visual experiences across the device landscape. This multimodal experience can make skills more delightful and engaging to the customer. "
         },
+        "transformers" : [
+            {
+                "inputPath": "text",
+                "transformer": "textToSpeech",
+                "outputName": "textTTSURL"
+            }
+        ],
         "logoUrl": "https://m.media-amazon.com/images/G/01/AlexaDevPortal/alexa.CB473388935._CB1539290662_.png"
     }
 }

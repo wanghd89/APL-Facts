@@ -119,7 +119,7 @@
     },
     "onMount": [],
     "graphics": {},
-    "commands": {},
+    "commands": [],
     "layouts": {},
     "mainTemplate": {
         "description": "********* Full-screen background image **********",
@@ -154,7 +154,9 @@
                         "items": [
                             {
                                 "type": "Text",
-                                "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                "id": "APL_Intro",
+                                "text": "${payload.bodyTemplate1Data.properties.text}",
+                                "speech": "${payload.bodyTemplate1Data.properties.textTTSURL}",
                                 "fontSize": "@textSizeBody",
                                 "spacing": "@spacingSmall",
                                 "style": "textStyleBody"
@@ -188,7 +190,9 @@
                         "items": [
                             {
                                 "type": "Text",
-                                "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                "id": "APL_Intro",
+                                "text": "${payload.bodyTemplate1Data.properties.text}",
+                                "speech": "${payload.bodyTemplate1Data.properties.textTTSURL}",
                                 "fontSize": "@textSizeBody",
                                 "spacing": "@spacingSmall",
                                 "style": "textStyleBody"
