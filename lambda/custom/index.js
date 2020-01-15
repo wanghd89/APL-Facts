@@ -20,6 +20,7 @@ const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
 
 const APL_INTRO_TOKEN = "APL_INTRO_TOKEN";
+const APL_DEMO_LIST_MAIN_TOKEN = "APL_DEMO_LIST_MAIN_TOKEN";
 
 // core functionality for fact skill
 const GetAPLFactHandler = {
@@ -44,20 +45,51 @@ const GetAPLFactHandler = {
           document: aplIntroDocument,
           datasources: aplIntroData
         }).addDirective({
-        type: 'Alexa.Presentation.APL.ExecuteCommands',
-        token: APL_INTRO_TOKEN,
-        commands: [
-          {
-              "type": "SpeakItem",
-              "componentId": "APL_Intro",
-              "highlightMode": "line",
-              "align": "center"
-          }
-        ],
-      });
+          type: 'Alexa.Presentation.APL.ExecuteCommands',
+          token: APL_INTRO_TOKEN,
+          commands: [
+            {
+                "type": "SpeakItem",
+                "componentId": "APL_Intro",
+                "highlightMode": "line",
+                "align": "center"
+            }
+          ],
+        });
     }
     else {
       responseBuilder.speak("This device does not support APL")
+
+    }
+    return responseBuilder.getResponse();
+  },
+};
+
+
+// ask APL demo menu
+const GetAPLDemoListHandler = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    // checks request type
+    return request.type === 'IntentRequest' && request.intent.name === 'GetAPLDemoListIntent';
+  },
+  handle(handlerInput) {
+    const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
+    const aplDemoList = require('APL/demo_list_main.json');
+    let responseBuilder = handlerInput.responseBuilder;
+    // Check for APL support on the user's device
+    if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
+        // Code to send APL directives can go here
+        responseBuilder.addDirective({
+          type: 'Alexa.Presentation.APL.RenderDocument',
+          token: APL_DEMO_LIST_MAIN_TOKEN,
+          document: aplDemoList,
+          datasources: {}
+        })
+        .speak("please select the APL supported features to demo on this device");
+    }
+    else {
+      responseBuilder.speak("This device does not support APL");
 
     }
     return responseBuilder.getResponse();
@@ -172,6 +204,7 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     GetAPLFactHandler,
+    GetAPLDemoListHandler,
     HelpHandler,
     ExitHandler,
     FallbackHandler,

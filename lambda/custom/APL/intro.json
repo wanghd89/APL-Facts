@@ -131,6 +131,7 @@
                 "when": "${viewport.shape == 'round'}",
                 "type": "Container",
                 "direction": "column",
+                "height": "100vh",
                 "items": [
                     {
                         "type": "Image",
@@ -147,21 +148,31 @@
                     },
                     {
                         "type": "Container",
-                        "grow": 1,
+                        "height": "45vh",
                         "paddingLeft": "@marginLeft",
                         "paddingRight": "@marginRight",
                         "paddingBottom": "@marginBottom",
                         "items": [
                             {
-                                "type": "Text",
-                                "id": "APL_Intro",
-                                "text": "${payload.bodyTemplate1Data.properties.text}",
-                                "speech": "${payload.bodyTemplate1Data.properties.textTTSURL}",
-                                "fontSize": "@textSizeBody",
-                                "spacing": "@spacingSmall",
-                                "style": "textStyleBody"
+                                "type": "ScrollView",
+                                "height": "100vh",
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "id": "APL_Intro",
+                                        "text": "${payload.bodyTemplate1Data.properties.text}",
+                                        "speech": "${payload.bodyTemplate1Data.properties.textTTSURL}",
+                                        "fontSize": "30",
+                                        "style": "textStyleBody"
+                                    }
+                                ]
                             }
-                        ]
+                        ],
+                        "grow": 1
+                    },
+                    {
+                        "hintText": "Try \"APL Demos\"",
+                        "type": "AlexaFooter"
                     }
                 ]
             },
@@ -184,20 +195,30 @@
                     },
                     {
                         "type": "Container",
+                        "height": "65vh",
                         "paddingLeft": "@marginLeft",
                         "paddingRight": "@marginRight",
                         "paddingBottom": "@marginBottom",
                         "items": [
                             {
-                                "type": "Text",
-                                "id": "APL_Intro",
-                                "text": "${payload.bodyTemplate1Data.properties.text}",
-                                "speech": "${payload.bodyTemplate1Data.properties.textTTSURL}",
-                                "fontSize": "@textSizeBody",
-                                "spacing": "@spacingSmall",
-                                "style": "textStyleBody"
+                                "type": "ScrollView",
+                                "height": "100vh",
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "id": "APL_Intro",
+                                        "text": "${payload.bodyTemplate1Data.properties.text}",
+                                        "speech": "${payload.bodyTemplate1Data.properties.textTTSURL}",
+                                        "fontSize": "@textSizeBody",
+                                        "style": "textStyleBody"
+                                    }
+                                ]
                             }
                         ]
+                    },
+                    {
+                        "hintText": "Try \"What can APL do\"",
+                        "type": "AlexaFooter"
                     }
                 ]
             }

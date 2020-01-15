@@ -9,7 +9,7 @@
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "1a1cb0d178bee52b45f5645b8b83ddf0"
+            "eTag": "bc673f346c8f60fa99d4942854ebbd53"
           }
         },
         "lambda": [
@@ -22,7 +22,7 @@
             "codeUri": "lambda/custom",
             "functionName": "What_Is_APL",
             "handler": "index.handler",
-            "revisionId": "2e997c6d-c6f1-44f2-a862-5bd663424a9b",
+            "revisionId": "e66c11b9-0e70-4557-99c0-ed92b464f748",
             "runtime": "nodejs8.10"
           }
         ]

@@ -1,0 +1,55 @@
+{
+    "type": "APL",
+    "version": "1.1",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.1.0"
+        }
+    ],
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+          {
+                "type": "AlexaTextList",
+                "theme": "dark",
+                "headerTitle": "What Can APL Do",
+                "headerAttributionText": "Attribution",
+                "headerAttributionImage": "https://m.media-amazon.com/images/G/01/AlexaDevPortal/alexa.CB473388935._CB1539290662_.png",
+                "headerAttributionPrimacy": true,
+                "headerDivider": false,
+                "headerBackgroundColor": "transparent",
+                "backgroundColor": "transparent",
+                "backgroundImageSource": "https://d2o906d8ln7ui1.cloudfront.net/images/BT6_Background.png",
+                "backgroundVideoSource": "",
+                "backgroundScale": "best-fill",
+                "backgroundAlign": "center",
+                "backgroundBlur": false,
+                "backgroundColorOverlay": false,
+                "backgroundOverlayGradient": false,
+                "backgroundVideoAutoPlay": false,
+                "backgroundVideoAudioTrack": "foreground",
+                "hideDivider": false,
+                "hideOrdinal": false,
+                "primaryAction": {
+                    "type": "SendEvent",
+                    "arguments": [
+                      "ListItemSelected",
+                      "${ordinal}"
+                    ]
+                },
+                "touchForward": false,
+                "listItems": [
+                    {
+                        "primaryText": "List Image elements"
+                    },
+                    {
+                        "primaryText": "List Text elements"
+                    }
+                ]
+          }
+      ]
+    }
+  }

@@ -25,7 +25,17 @@
             "What is APL",
             "What is Alexa Presentation Language",
             "Alexa Presentation Language",
-            "How can I render screen on Alexa"
+            "How can I render screen on Alexa",
+            "Open APL facts"
+          ],
+          "slots": []
+        },
+        {
+          "name": "GetAPLDemoListIntent",
+          "samples": [
+            "What can APL do",
+            "Watch APL Demos",
+            "APL Demos"
           ],
           "slots": []
         },
