@@ -10,7 +10,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 //
 // Alexa Fact Skill - Sample for Beginners
 //
@@ -18,6 +17,8 @@
 // sets up dependencies
 const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
+const TextListDemo = require('./aplDemo/textListDemo.js');
+const ImageListDemo = require('./aplDemo/imageListDemo.js');
 
 const APL_INTRO_TOKEN = "APL_INTRO_TOKEN";
 const APL_DEMO_LIST_MAIN_TOKEN = "APL_DEMO_LIST_MAIN_TOKEN";
@@ -71,7 +72,8 @@ const GetAPLDemoListHandler = {
   canHandle(handlerInput) {
     const request = handlerInput.requestEnvelope.request;
     // checks request type
-    return request.type === 'IntentRequest' && request.intent.name === 'GetAPLDemoListIntent';
+    return (request.type === 'IntentRequest' && request.intent.name === 'GetAPLDemoListIntent')
+      || (request.type === 'Alexa.Presentation.APL.UserEvent' && request.arguments[0] === 'goBackToMain');
   },
   handle(handlerInput) {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
@@ -205,6 +207,8 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     GetAPLFactHandler,
     GetAPLDemoListHandler,
+    TextListDemo.TextListDemoHandler,
+    ImageListDemo.ImageListDemoHandler,
     HelpHandler,
     ExitHandler,
     FallbackHandler,

@@ -36,7 +36,6 @@
                 "primaryAction": {
                     "type": "SendEvent",
                     "arguments": [
-                      "ListItemSelected",
                       "${ordinal}"
                     ]
                 },

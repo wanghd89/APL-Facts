@@ -1,0 +1,121 @@
+{
+    "type": "APL",
+    "version": "1.1",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.1.0"
+        }
+    ],
+    "mainTemplate": {
+        "parameters": ["payload"],
+        "items": [
+            {
+                "type": "AlexaImageList",
+                "theme": "dark",
+                "headerTitle": "Image List Demo",
+                "headerSubtitle": "Header Subtitle",
+                "headerAttributionText": "Menu",
+                "headerAttributionPrimacy": true,
+                "headerDivider": false,
+                "headerBackButton": true,
+                "headerBackButtonAccessibilityLabel": "back",
+                "headerBackgroundColor": "transparent",
+                "headerBackButtonCommand": {
+                    "type": "SendEvent",
+                    "arguments": ["goBackToMain"]
+                },
+                "backgroundImageSource": "https://d2o906d8ln7ui1.cloudfront.net/images/BT6_Background.png",
+                "backgroundScale": "best-fill",
+                "backgroundAlign": "center",
+                "backgroundBlur": false,
+                "backgroundColorOverlay": false,
+                "backgroundOverlayGradient": false,
+                "backgroundVideoAutoPlay": false,
+                "backgroundVideoAudioTrack": "foreground",
+                "hideOrdinal": false,
+                "primaryAction": {
+                    "type": "SendEvent",
+                    "arguments": ["ListItemSelected", "${ordinal}"]
+                },
+                "listItems": [
+                    {
+                        "primaryText": "Pecan Pie 1",
+                        "secondaryText": "$9.99",
+                        "providerText": "Provider Text 1",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/755914.jpg",
+                        "imageProgressBarPercentage": 90
+                    },
+                    {
+                        "primaryText": "Pecan Pie 2",
+                        "secondaryText": "$9.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/303241.jpg",
+                        "providerText": "Provider Text 2",
+                        "token": "selectRecipe13872",
+                        "imageProgressBarPercentage": 50
+                    },
+                    {
+                        "primaryText": "Pecan Pie 3",
+                        "secondaryText": "Sold out",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/303241.jpg",
+                        "token": "selectRecipe22544",
+                        "disabled": true
+                    },
+                    {
+                        "primaryText": "Pecan Pie 4",
+                        "secondaryText": "$9.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/966157.jpg",
+                        "token": "selectRecipe8355",
+                        "imageAspectRatio": "round"
+                    },
+                    {
+                        "primaryText": "Pecan Pie 5",
+                        "secondaryText": "$7.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/1153662.jpg",
+                        "token": "selectRecipe24090"
+                    },
+                    {
+                        "primaryText": "Pecan Pie 6",
+                        "secondaryText": "$9.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/141653.jpg",
+                        "token": "selectRecipe13564"
+                    },
+                    {
+                        "primaryText": "Pecan Pie 7",
+                        "secondaryText": "$9.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/4573769.jpg",
+                        "token": "selectRecipe18433"
+                    },
+                    {
+                        "primaryText": "Pecan Pie 8",
+                        "secondaryText": "$9.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/1754648.jpg",
+                        "token": "selectRecipe15994"
+                    },
+                    {
+                        "primaryText": "Pecan Pie 9",
+                        "secondaryText": "$9.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/1846184.jpg",
+                        "token": "selectRecipe12577"
+                    },
+                    {
+                        "primaryText": "Pecan Pie 10",
+                        "secondaryText": "$9.99",
+                        "imageSource": "http://images.media-allrecipes.com/userphotos/250x250/2898253.jpg",
+                        "token": "selectRecipe15739"
+                    }
+                ],
+                "imageHideScrim": false,
+                "imageShowProgressBar": false,
+                "imageRoundedCorner": true,
+                "onlyShowPrimaryText": true,
+                "imageScale": "best-fit",
+                "imageAlignment": "center",
+                "imageAspectRatio": "standard_portrait",
+                "imageBlurredBackground": true,
+                "hintText": "This can be used as menu."
+            }
+        ]
+    }
+}
