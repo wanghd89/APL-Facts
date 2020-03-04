@@ -46,6 +46,9 @@
                     },
                     {
                         "primaryText": "List Text elements"
+                    },
+                    {
+                        "primaryText": "AVG"
                     }
                 ]
           }

@@ -1,0 +1,67 @@
+{
+    "type": "APL",
+    "version": "1.4",
+
+    "graphics": {
+        "myPillShape": {
+            "type": "AVG",
+            "version": "1.0",
+            "height": 100,
+            "width": 100,
+            "parameters": [
+                "myScaleType"
+            ],
+            "scaleTypeHeight": "${myScaleType}",
+            "items": [
+                {
+                    "type": "group",
+                    "items": [
+                        {
+                            "type": "path",
+                            "pathData": "M25,50 a25,25 0 1 1 50,0 l0 ${height-100} a25,25 0 1 1 -50,0 z",
+                            "stroke": "red",
+                            "strokeWidth": 20
+                        },
+                        {
+                            "type": "text",
+                            "fill": "red",
+                            "fontFamily": "amazon-ember, sans-serif",
+                            "fontSize": 40,
+                            "fontStyle": "italic",
+                            "text": "pill",
+                            "x": 50,
+                            "y": 60,
+                            "fontWeight": "bold",
+                            "textAnchor": "middle",
+                            "stroke": "white",
+                            "strokeWidth": 3,
+                            "letterSpacing": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "item": {
+            "type": "Container",
+            "direction": "row",
+            "items": {
+                "type": "VectorGraphic",
+                "source": "myPillShape",
+                "width": 100,
+                "height": 200,
+                "scale": "fill",
+                "myScaleType": "${data}",
+                "id": "${data}"
+            },
+            "data": [
+                "none",
+                "stretch"
+            ]
+        }
+    }
+}

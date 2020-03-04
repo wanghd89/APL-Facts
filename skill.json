@@ -64,6 +64,14 @@
                 "maxWidth": 960,
                 "minHeight": 540,
                 "maxHeight": 540
+              },
+              {
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "minWidth": 960,
+                "maxWidth": 960,
+                "minHeight": 480,
+                "maxHeight": 480
               }
             ]
           }

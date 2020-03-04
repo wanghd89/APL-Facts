@@ -5,11 +5,11 @@
       "merge": {},
       "resources": {
         "manifest": {
-          "eTag": "dcfe93fe59152af1e33b794f5bdf9fe2"
+          "eTag": "44212d23bba7c5300cb9dfc32bb69ca6"
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "8f0e3108613f160f4ff6609eac8f05d3"
+            "eTag": "28826f22d44f82130e9943ff9e3928f6"
           }
         },
         "lambda": [
@@ -22,8 +22,8 @@
             "codeUri": "lambda/custom",
             "functionName": "What_Is_APL",
             "handler": "index.handler",
-            "revisionId": "8a7e9a78-943d-4027-84b8-b569b34d3320",
-            "runtime": "nodejs8.10"
+            "revisionId": "6506aa43-a70a-4797-b33f-e2e5942af245",
+            "runtime": "nodejs12.x"
           }
         ]
       }

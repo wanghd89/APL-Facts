@@ -19,6 +19,7 @@ const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
 const TextListDemo = require('./aplDemo/textListDemo.js');
 const ImageListDemo = require('./aplDemo/imageListDemo.js');
+const AVGDemo = require('./aplDemo/avgDemo.js');
 
 const APL_INTRO_TOKEN = "APL_INTRO_TOKEN";
 const APL_DEMO_LIST_MAIN_TOKEN = "APL_DEMO_LIST_MAIN_TOKEN";
@@ -209,6 +210,7 @@ exports.handler = skillBuilder
     GetAPLDemoListHandler,
     TextListDemo.TextListDemoHandler,
     ImageListDemo.ImageListDemoHandler,
+    AVGDemo.AVGDemoHandler,
     HelpHandler,
     ExitHandler,
     FallbackHandler,
